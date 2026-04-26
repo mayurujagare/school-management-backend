@@ -47,7 +47,8 @@ public class AuthService {
                 .orElseThrow(() -> new AppException(ErrorCode.IDENTIFIER_NOT_FOUND));
 
         if (!user.getIsActive()) {
-            throw new AppException(ErrorCode.USER_INACTIVE);
+            // Keep login failures consistent (401) and avoid exposing account status.
+            throw new AppException(ErrorCode.INVALID_CREDENTIALS);
         }
 
         if (!user.hasRole(Role.PARENT)) {
@@ -84,7 +85,7 @@ public class AuthService {
                 .orElseThrow(() -> new AppException(ErrorCode.INVALID_CREDENTIALS));
 
         if (!user.getIsActive()) {
-            throw new AppException(ErrorCode.USER_INACTIVE);
+            throw new AppException(ErrorCode.INVALID_CREDENTIALS);
         }
 
         if (user.getAuthType() == User.AuthType.OTP) {
