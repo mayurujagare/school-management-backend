@@ -31,10 +31,11 @@ public class SecurityConfig {
     private static final String[] PUBLIC_URLS = {
             "/api/v1/auth/**",
             "/actuator/health",
-            "/v3/api-docs/**",
-            "/swagger-ui/**"
+            "/actuator/info",
+            "/v3/api-docs/**",        // ← OpenAPI JSON
+            "/swagger-ui/**",         // ← Swagger UI assets
+            "/swagger-ui.html"        // ← Swagger UI entry
     };
-
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         return http

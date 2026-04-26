@@ -35,3 +35,31 @@ app:
     rate-limit-per-15-min: 3
   mail:
     from: ${MAIL_FROM}
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    display-request-duration: true
+    tags-sorter: alpha
+    operations-sorter: alpha
+    try-it-out-enabled: true      # enables "Try it out" button by default
+  show-actuator: false # Actuator
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info
+  endpoint:
+    health:
+      show-details: always    # shows DB, disk details
+  info:
+    env:
+      enabled: true
+
+# App info shown at /actuator/info
+info:
+  app:
+    name: School Management System
+    version: 1.0.0
+    profile: ${spring.profiles.active}
