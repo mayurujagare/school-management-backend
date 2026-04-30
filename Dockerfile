@@ -8,6 +8,9 @@ COPY src ./src
 COPY mvnw .
 COPY .mvn ./.mvn
 
+# Make mvnw executable
+RUN chmod +x ./mvnw
+
 RUN ./mvnw clean package -DskipTests
 
 # Stage 2: Runtime
