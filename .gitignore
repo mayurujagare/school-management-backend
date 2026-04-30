@@ -1,14 +1,14 @@
-# ─── Compiled ───────────────────────────────
+# Compiled
 target/
 *.class
 *.jar
 *.war
 
-# ─── Maven ──────────────────────────────────
+# Maven
 .mvn/timing.properties
 .mvn/wrapper/maven-wrapper.jar
 
-# ─── IDE ────────────────────────────────────
+# IDE
 .idea/
 *.iml
 .vscode/
@@ -16,16 +16,15 @@ target/
 *.project
 *.settings/
 
-# ─── Spring Boot ────────────────────────────
+# Spring Boot
 *.log
 logs/
 
-# ─── Environment & Secrets ──────────────────
+# Environment & Secrets
 .env
 .env.*
 application-local.yml
-application-prod.yml
 
-# ─── OS ─────────────────────────────────────
+# OS
 .DS_Store
 Thumbs.db

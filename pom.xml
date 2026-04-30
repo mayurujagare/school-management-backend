@@ -137,6 +137,7 @@
     </dependencies>
 
     <build>
+        <finalName>school-management-0.0.1-SNAPSHOT</finalName>
         <plugins>
 
             <plugin>
